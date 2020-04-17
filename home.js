@@ -85,12 +85,22 @@ function createSets(workoutNum, num, reps) {
   for (let i = 0; i < num; i++) {
     let tag = document.createElement('p');
     let text = document.createTextNode(`${reps} reps`);
+    let button = document.createElement('button');
+    button.className = 'reps-button';
+    button.addEventListener('click', function () {
+      completeSet(button);
+    });
     tag.appendChild(text);
-    workoutBottom.appendChild(tag);
+    button.appendChild(tag);
+    workoutBottom.appendChild(button);
   }
   workoutNum.appendChild(workoutBottom);
 }
 
+//move set off the screen, signifying its complete
+function completeSet(button) {
+  button.style.opacity = 0;
+}
 //displays workoutA
 function workoutA() {
   routineMessage.innerHTML = `Heres your workout for today:`;
