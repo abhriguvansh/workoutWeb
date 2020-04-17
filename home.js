@@ -1,41 +1,89 @@
-const workoutTitle1 = document.getElementById('workout-title1');
-const workoutTitle2 = document.getElementById('workout-title2');
-const workoutTitle3 = document.getElementById('workout-title3');
-const workoutTitle4 = document.getElementById('workout-title4');
-const workoutTitle5 = document.getElementById('workout-title5');
-const workoutTitle6 = document.getElementById('workout-title6');
-const reps1 = document.getElementById('reps1');
-const reps2 = document.getElementById('reps2');
-const reps3 = document.getElementById('reps3');
-const reps4 = document.getElementById('reps4');
-const reps5 = document.getElementById('reps5');
-const reps6 = document.getElementById('reps6');
-const desc1 = document.getElementById('description1');
-const desc2 = document.getElementById('description2');
-const desc3 = document.getElementById('description3');
-const desc4 = document.getElementById('description4');
-const desc5 = document.getElementById('description5');
-const desc6 = document.getElementById('description6');
-const image1 = document.getElementById('images1');
-const image2 = document.getElementById('images2');
-const image3 = document.getElementById('images3');
-const image4 = document.getElementById('images4');
-const image5 = document.getElementById('images5');
-const image6 = document.getElementById('images6');
-const routineMessage = document.getElementById('routine-message');
-const workout1 = document.getElementById('workout1');
-const workout2 = document.getElementById('workout2');
-const workout3 = document.getElementById('workout3');
-const workout4 = document.getElementById('workout4');
-const workout5 = document.getElementById('workout5');
-const workout6 = document.getElementById('workout6');
+// const workoutTitle1 = document.getElementById('workout-title1');
+// const workoutTitle2 = document.getElementById('workout-title2');
+// const workoutTitle3 = document.getElementById('workout-title3');
+// const workoutTitle4 = document.getElementById('workout-title4');
+// const workoutTitle5 = document.getElementById('workout-title5');
+// const workoutTitle6 = document.getElementById('workout-title6');
+// const reps1 = document.getElementById('reps1');
+// const reps2 = document.getElementById('reps2');
+// const reps3 = document.getElementById('reps3');
+// const reps4 = document.getElementById('reps4');
+// const reps5 = document.getElementById('reps5');
+// const reps6 = document.getElementById('reps6');
+// const desc1 = document.getElementById('description1');
+// const desc2 = document.getElementById('description2');
+// const desc3 = document.getElementById('description3');
+// const desc4 = document.getElementById('description4');
+// const desc5 = document.getElementById('description5');
+// const desc6 = document.getElementById('description6');
+// const image1 = document.getElementById('images1');
+// const image2 = document.getElementById('images2');
+// const image3 = document.getElementById('images3');
+// const image4 = document.getElementById('images4');
+// const image5 = document.getElementById('images5');
+// const image6 = document.getElementById('images6');
+// const routineMessage = document.getElementById('routine-message');
+// const workout1 = document.getElementById('workout1');
+// const workout2 = document.getElementById('workout2');
+// const workout3 = document.getElementById('workout3');
+// const workout4 = document.getElementById('workout4');
+// const workout5 = document.getElementById('workout5');
+// const workout6 = document.getElementById('workout6');
+let defaultMessage = document.createElement('div');
+let congratsMessage = document.createElement('div');
+let workoutList = document.createElement('ul');
+workoutList.id = 'workout-list';
 const body = document.getElementById('body');
-const congrats = document.getElementById('congrats');
-const defaultMessage = document.getElementById('default');
-
+const greeting = document.getElementById('greeting');
+const routineMessage = document.getElementById('routine-message');
 let workoutsCompleted = 0;
-selectWorkout();
 
+startup();
+//starts animations, first method called
+function startup() {
+  greeting.style.top = '20%';
+  setTimeout(function () {
+    greeting.style.top = '100px';
+    setTimeout(function () {
+      routineMessage.style.left = '33.5%';
+      setTimeout(function () {
+        workoutList.style.right = '-700px';
+        selectWorkout();
+        workoutList.style.top = '15%';
+        setTimeout(function () {
+          workoutList.style.right = '35.8%';
+          defaultMessage.style.left = '39.5%';
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 3000);
+}
+//creates a workout
+function createWorkout(title, amt, desc, img, sets, numReps) {
+  let workout = document.createElement('li');
+  workout.className = 'workout';
+  let text = document.createElement('div');
+  text.id = 'text';
+  workoutTitle = document.createElement('h3');
+  workoutTitle.className = 'workout-title';
+  workoutTitle.innerHTML = title;
+  text.appendChild(workoutTitle);
+  let reps = document.createElement('p');
+  reps.className = 'reps';
+  reps.innerHTML = amt;
+  text.appendChild(reps);
+  let description = document.createElement('p');
+  description.className = 'description';
+  description.innerHTML = desc;
+  text.appendChild(description);
+  workout.appendChild(text);
+  let image = document.createElement('img');
+  image.className = 'images';
+  image.src = img;
+  workout.appendChild(image);
+  workoutList.appendChild(workout);
+  createSets(workout, sets, numReps);
+}
 //finds day and selects workout
 function selectWorkout() {
   workoutsCompleted = 0;
@@ -78,6 +126,24 @@ function selectWorkout() {
       restDay();
       break;
   }
+  //create end message that lets you know if you have completed the workout or not
+  let endMessage = document.createElement('div');
+  endMessage.className = 'end-message';
+
+  defaultMessage.id = 'default';
+  let message = document.createElement('h3');
+  message.id = 'message';
+  message.innerHTML = 'Keep Working!';
+  defaultMessage.appendChild(message);
+  endMessage.appendChild(defaultMessage);
+
+  congratsMessage.id = 'congrats';
+  let congrats = document.createElement('h3');
+  congrats.id = 'message';
+  congrats.innerHTML = 'Congrats! You Finished The Workout';
+  congratsMessage.appendChild(congrats);
+  endMessage.appendChild(congratsMessage);
+  body.appendChild(endMessage);
 }
 
 /*creates clickable buttons to show you how many sets you have left
@@ -98,16 +164,7 @@ function createSets(workoutNum, num, reps) {
       if (workoutsCompleted == 3) {
         let message = document.getElementById('message');
         defaultMessage.style.left = '-500px';
-        congrats.style.left = '24%';
-
-        // message.remove();
-        // let newMessage = document.createElement('h3');
-        // let text = document.createTextNode(
-        //   'Congrats! You finished the workout'
-        // );
-        // newMessage.appendChild(text);
-        // congrats.appendChild(newMessage);
-        // congrats.style.left = '41%';
+        congratsMessage.style.left = '24%';
       }
     });
     tag.appendChild(text);
@@ -129,42 +186,59 @@ function completeSet(button) {
 
 //displays workoutA
 function workoutA() {
-  routineMessage.innerHTML = `Heres your workout for today:`;
-  workoutTitle1.innerHTML = `Pushups`;
-  reps1.innerHTML = `4 x 20`;
-  desc1.innerHTML = `Lay with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again.`;
-  image1.src = './images/pushup.jpg';
-  createSets(workout1, 4, 20);
+  body.appendChild(workoutList);
+  createWorkout(
+    'Pushups',
+    '4 x 20',
+    'Lay with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again.',
+    './images/pushup.jpg',
+    4,
+    20
+  );
+  createWorkout(
+    'Squats',
+    '4 x 20',
+    `Stand tall with your feet hip distance apart. Bend your knees and extend your buttocks backward. Rise back up and repeat. `,
+    './images/squat.jpg',
+    4,
+    20
+  );
+  // routineMessage.innerHTML = `Heres your workout for today:`;
+  createWorkout(
+    'Lat Pulldown',
+    '3 x (8-12)',
+    `Pull the bar down until it's approximately level with the chin. Squeeze the shoulder blades together while maintaining square shoulders. Slowly return the bar to the top. `,
+    './images/lat.jpg',
+    3,
+    '(8-12)'
+  );
 
-  workoutTitle2.innerHTML = `Squats`;
-  reps2.innerHTML = `4 x 20`;
-  desc2.innerHTML = `Stand tall with your feet hip distance apart. Bend your knees and extend your buttocks backward. Rise back up and repeat. `;
-  image2.src = './images/squat.jpg';
-  createSets(workout2, 4, 20);
+  createWorkout(
+    'Lying Leg Curl',
+    '4 x 12',
+    `Place a dumbbell on its end. Lie prone on your front, with your knees close to the edge. Pinch the dumbbell between the arches of your feet.`,
+    './images/leg-curl.jpg',
+    4,
+    12
+  );
 
-  workoutTitle3.innerHTML = `Lat Pulldown`;
-  reps3.innerHTML = `3 x (8-12)`;
-  desc3.innerHTML = `Pull the bar down until it's approximately level with the chin. Squeeze the shoulder blades together while maintaining square shoulders. Slowly return the bar to the top. `;
-  image3.src = './images/lat.jpg';
-  createSets(workout3, 3, '8-12');
+  createWorkout(
+    'Shoulder Press',
+    '3 x (8-12)',
+    `Hold the dumbbells by your shoulders. Without leaning back, extend through your elbows to press the weights above your head. Then slowly return to the starting position. `,
+    './images/shoulder.jpg',
+    3,
+    '(8-12)'
+  );
 
-  workoutTitle4.innerHTML = `Lying Leg Curl`;
-  reps4.innerHTML = `4 x 12`;
-  desc4.innerHTML = `Place a dumbbell on its end. Lie prone on your front, with your knees close to the edge. Pinch the dumbbell between the arches of your feet.`;
-  image4.src = './images/leg-curl.jpg';
-  createSets(workout4, 4, 12);
-
-  workoutTitle5.innerHTML = `Shoulder Press`;
-  reps5.innerHTML = `3 x (8-12)`;
-  desc5.innerHTML = `Hold the dumbbells by your shoulders. Without leaning back, extend through your elbows to press the weights above your head. Then slowly return to the starting position. `;
-  image5.src = './images/shoulder.jpg';
-  createSets(workout5, 3, '8-12');
-
-  workoutTitle6.innerHTML = `Bicep Curl`;
-  reps6.innerHTML = `3 x 8`;
-  desc6.innerHTML = `Hold the barbell with both hands facing up so your arms are shoulder-width apart. Curl the barbell to the middle of your body. Slowly lower the weight to return to the starting position.`;
-  image6.src = './images/bicep.jpg';
-  createSets(workout6, 3, 8);
+  createWorkout(
+    'Bicep Curl',
+    '3 x 8',
+    `Hold the barbell with both hands facing up so your arms are shoulder-width apart. Curl the barbell to the middle of your body. Slowly lower the weight to return to the starting position.`,
+    './images/bicep.jpg',
+    3,
+    8
+  );
 }
 
 //displays workoutB

@@ -3,12 +3,18 @@
   padding: 0;
   font-family: 'Raleway', sans-serif;
 }
+
+
 body {
   position: relative;
+  width: 100%;
+  height: 2000px;
+  margin: 0;
 }
 
 html {
-  height: 250%;
+  margin: 0;
+  height: 2000px;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+100 */
   background: #ff351f; /* Old browsers */
   background: -moz-linear-gradient(
@@ -32,25 +38,33 @@ html {
 }
 
 #greeting {
-  text-align: center;
-  margin-top: 50px;
+  position: absolute;
+  /* top: -10%; */
+  top: -200px;
   color: white;
-  transition: ease 2s;
+  transition: top 3s ease;
   font-size: 48px;
+  /* left: 41.8%;  */
+  left: 41.8%;
 }
 
 #routine-message {
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 75px;
+  position: absolute;
+  top: 120px;
+  /* left: 33.5%; */
+  left: -500px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   color: white;
-  transition: ease 2s;
+  transition: left 2.5s ease;
   font-size: 36px;
 }
 
 #workout-list {
-  text-align: center;
-  margin-top: 40px;
+  position: absolute;
+  /* right: 35.8%; */
+  right: -750px;
+  transition: right 2s ease;
   list-style-type: none;
 }
 
@@ -146,17 +160,19 @@ html {
   text-align: center;
   font-size: 36px;
   margin-top: 30px;
-  left: 39.5%;
-  transition: all 1s ease;
+  top: 1700px;
+  left: -500px;
+  transition: all 3s ease;
 }
 
 #congrats {
   position: absolute;
   color: white;
   height: 100%;
+  top: 1700px;
   font-size: 36px;
   margin-top: 30px;
   left: 200%;
-  transition: all 1s ease;
+  transition: left 3s ease;
   word-wrap: none;
 }
