@@ -23,7 +23,12 @@ const image4 = document.getElementById('images4');
 const image5 = document.getElementById('images5');
 const image6 = document.getElementById('images6');
 const routineMessage = document.getElementById('routine-message');
-
+const workout1 = document.getElementById('workout1');
+const workout2 = document.getElementById('workout2');
+const workout3 = document.getElementById('workout3');
+const workout4 = document.getElementById('workout4');
+const workout5 = document.getElementById('workout5');
+const workout6 = document.getElementById('workout6');
 selectWorkout();
 
 //finds day and selects workout
@@ -69,6 +74,23 @@ function selectWorkout() {
   }
 }
 
+/*creates clickable buttons to show you how many sets you have left
+  num = how many buttons you want
+  workoutNum = which workout number are you adding the buttons too
+  reps = how many reps you want the button to display*/
+
+function createSets(workoutNum, num, reps) {
+  let workoutBottom = document.createElement('div');
+  workoutBottom.className = 'workout-bottom';
+  for (let i = 0; i < num; i++) {
+    let tag = document.createElement('p');
+    let text = document.createTextNode(`${reps} reps`);
+    tag.appendChild(text);
+    workoutBottom.appendChild(tag);
+  }
+  workoutNum.appendChild(workoutBottom);
+}
+
 //displays workoutA
 function workoutA() {
   routineMessage.innerHTML = `Heres your workout for today:`;
@@ -76,31 +98,38 @@ function workoutA() {
   reps1.innerHTML = `4 x 20`;
   desc1.innerHTML = `Lay with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again.`;
   image1.src = './images/pushup.jpg';
+  createSets(workout1, 4, 20);
 
   workoutTitle2.innerHTML = `Squats`;
   reps2.innerHTML = `4 x 20`;
   desc2.innerHTML = `Stand tall with your feet hip distance apart. Bend your knees and extend your buttocks backward. Rise back up and repeat. `;
   image2.src = './images/squat.jpg';
+  createSets(workout2, 4, 20);
 
   workoutTitle3.innerHTML = `Lat Pulldown`;
   reps3.innerHTML = `3 x (8-12)`;
   desc3.innerHTML = `Pull the bar down until it's approximately level with the chin. Squeeze the shoulder blades together while maintaining square shoulders. Slowly return the bar to the top. `;
   image3.src = './images/lat.jpg';
+  createSets(workout3, 3, '8-12');
 
   workoutTitle4.innerHTML = `Lying Leg Curl`;
   reps4.innerHTML = `4 x 12`;
   desc4.innerHTML = `Place a dumbbell on its end. Lie prone on your front, with your knees close to the edge. Pinch the dumbbell between the arches of your feet.`;
   image4.src = './images/leg-curl.jpg';
+  createSets(workout4, 4, 12);
 
   workoutTitle5.innerHTML = `Shoulder Press`;
   reps5.innerHTML = `3 x (8-12)`;
   desc5.innerHTML = `Hold the dumbbells by your shoulders. Without leaning back, extend through your elbows to press the weights above your head. Then slowly return to the starting position. `;
   image5.src = './images/shoulder.jpg';
+  createSets(workout5, 3, '8-12');
 
   workoutTitle6.innerHTML = `Bicep Curl`;
   reps6.innerHTML = `3 x 8`;
   desc6.innerHTML = `Hold the barbell with both hands facing up so your arms are shoulder-width apart. Curl the barbell to the middle of your body. Slowly lower the weight to return to the starting position.`;
   image6.src = './images/bicep.jpg';
+  createSets(workout6, 3, 8);
+
 }
 
 //displays workoutB
@@ -111,31 +140,38 @@ function workoutB() {
   reps1.innerHTML = `4 x 20`;
   desc1.innerHTML = `Place your hands on the edge of a bench. Bend your elbows to lower your chest to the edge of the bench. Push your body away from the bench until your elbows are extended.`;
   image1.src = './images/incline.jpg';
+  createSets(workout1, 4, 20);
 
   workoutTitle2.innerHTML = `Bulgarian Split Squats`;
   reps2.innerHTML = `4 x 8`;
   desc2.innerHTML = `Find knee height bench. Get into a forward lunge position with torso up and your back foot on the bench. Lower until your front thigh is almost horizontal. Don't let your knee travel beyond your toes.`;
   image2.src = './images/splitsquat.jpg';
+  createSets(workout1, 4, 8);
 
   workoutTitle3.innerHTML = `Bent Over Row`;
   reps3.innerHTML = `3 x (8-12)`;
   desc3.innerHTML = `Grab a barbell with hands slightly wider than shoulder-width apart. With your legs slightly bent, keep your back straight and lean forward. Row the weight upwards into the chest. Pause then lower.`;
   image3.src = './images/row.jpg';
+  createSets(workout1, 4, '8-12');
 
   workoutTitle4.innerHTML = `Lateral Raise`;
   reps4.innerHTML = `3 x 12`;
   desc4.innerHTML = `Hold a dumbbell in each hand and stand with palms facing each other. Raise the weights up and out 90 degrees until your arms are parallel to the floor.`;
   image4.src = './images/lateral.jpg';
+  createSets(workout1, 3, 12);
 
   workoutTitle5.innerHTML = `Tricep Kickback`;
   reps5.innerHTML = `3 x 12`;
   desc5.innerHTML = `Rest hands and knees on bench. Keep arm up and bent (see top part of image). Extend arm to fully straight position (bottom right part of image). Return to default position.`;
   image5.src = './images/tricep.jpg';
+  createSets(workout1, 3, 12);
 
   workoutTitle6.innerHTML = `Decline Pushups`;
   reps6.innerHTML = `3 x 12`;
   desc6.innerHTML = `Rest hands on the floor but keep feet on a bench so that your lower body is elevated. Same form as pushups.`;
   image6.src = './images/decline.jpg';
+  createSets(workout1, 3, 12);
+
 }
 
 //displays abs and cardio
