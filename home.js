@@ -29,10 +29,16 @@ const workout3 = document.getElementById('workout3');
 const workout4 = document.getElementById('workout4');
 const workout5 = document.getElementById('workout5');
 const workout6 = document.getElementById('workout6');
+const body = document.getElementById('body');
+const congrats = document.getElementById('congrats');
+const defaultMessage = document.getElementById('default');
+
+let workoutsCompleted = 0;
 selectWorkout();
 
 //finds day and selects workout
 function selectWorkout() {
+  workoutsCompleted = 0;
   let todaysDate = Date.today(); //find day
   switch (
     todaysDate.toString().substring(0, 3) //depending on the day call a different workout method
@@ -89,6 +95,20 @@ function createSets(workoutNum, num, reps) {
     button.className = 'reps-button';
     button.addEventListener('click', function () {
       completeSet(button);
+      if (workoutsCompleted == 3) {
+        let message = document.getElementById('message');
+        defaultMessage.style.left = '-500px';
+        congrats.style.left = '24%';
+
+        // message.remove();
+        // let newMessage = document.createElement('h3');
+        // let text = document.createTextNode(
+        //   'Congrats! You finished the workout'
+        // );
+        // newMessage.appendChild(text);
+        // congrats.appendChild(newMessage);
+        // congrats.style.left = '41%';
+      }
     });
     tag.appendChild(text);
     button.appendChild(tag);
@@ -100,7 +120,13 @@ function createSets(workoutNum, num, reps) {
 //move set off the screen, signifying its complete
 function completeSet(button) {
   button.style.opacity = 0;
+  workoutsCompleted++;
+  console.log(workoutsCompleted);
+  setTimeout(function () {
+    button.style.display = 'none';
+  }, 375);
 }
+
 //displays workoutA
 function workoutA() {
   routineMessage.innerHTML = `Heres your workout for today:`;
@@ -164,10 +190,10 @@ function workoutB() {
   createSets(workout3, 4, '8-12');
 
   workoutTitle4.innerHTML = `Lateral Raise`;
-  reps4.innerHTML = `3 x 12`;
+  reps4.innerHTML = `4 x 12`;
   desc4.innerHTML = `Hold a dumbbell in each hand and stand with palms facing each other. Raise the weights up and out 90 degrees until your arms are parallel to the floor.`;
   image4.src = './images/lateral.jpg';
-  createSets(workout4, 3, 12);
+  createSets(workout4, 4, 12);
 
   workoutTitle5.innerHTML = `Tricep Kickback`;
   reps5.innerHTML = `3 x 12`;

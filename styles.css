@@ -3,6 +3,9 @@
   padding: 0;
   font-family: 'Raleway', sans-serif;
 }
+body {
+  position: relative;
+}
 
 html {
   height: 250%;
@@ -129,11 +132,31 @@ html {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   transition: border 0.5s, background-color 0.75s;
-  width: ;
 }
 
 .workout-bottom p:hover {
   background-color: rgba(20, 165, 20, 0.9);
   border: rgba(0, 255, 0, 0.5) 2px solid;
   border-top: white 2px solid;
+}
+
+#default {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 30px;
+  left: 39.5%;
+  transition: all 1s ease;
+}
+
+#congrats {
+  position: absolute;
+  color: white;
+  height: 100%;
+  font-size: 36px;
+  margin-top: 30px;
+  left: 200%;
+  transition: all 1s ease;
+  word-wrap: none;
 }
