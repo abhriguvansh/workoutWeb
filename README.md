@@ -1,3 +1,3 @@
 ## workoutWeb
 
-The goal of this project to to tell the user how to exercise based on the current day of the week
+The goal of this project is to give the user workouts based to the day
