@@ -1,6 +1,6 @@
 ## workoutWeb
 
-The goal of this project is to give the user workouts based to the day
+The goal of this project is to give the user workouts based on the day
 
 Monday: Workout A | Workout B
 

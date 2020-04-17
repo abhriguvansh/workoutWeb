@@ -5,7 +5,7 @@
 }
 
 html {
-  height: 210%;
+  height: 250%;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+100 */
   background: #ff351f; /* Old browsers */
   background: -moz-linear-gradient(
@@ -55,11 +55,12 @@ html {
   transition: ease-in-out 0.5s;
   width: 400px;
   height: 150px;
-  margin: 50px auto;
+  margin: 75px auto;
   color: white;
   border: white 2px solid;
   border-radius: 25px;
   position: relative;
+  z-index: 1;
 }
 #workout-list .workout img {
   width: 100px;
@@ -73,17 +74,16 @@ html {
   top: 24px;
   right: 24px;
 }
-#workout-list #text {
-  text-align: center;
-  width: 270px;
-}
 
 #workout-list #text .workout-title {
   font-size: 24px;
-  margin-top: 10px;
+  padding-top: 10px;
   margin-bottom: 5px;
+  width: 270px;
 }
 .reps {
+  width: 270px;
+
   margin-bottom: 8px;
 }
 .description {
@@ -95,10 +95,36 @@ html {
   font-size: 24px;
 }
 
-.workout:hover {
+#text:hover {
   background-color: white;
+  color: #ff351f;
 }
 
-#text:hover {
-  color: #ff351f;
+#text {
+  text-align: center;
+  width: 404px;
+  height: 100%;
+  border-radius: 22px;
+  transition: color 0.35s, background-color 2s;
+}
+.workout-bottom {
+  display: flex;
+  height: 30px;
+  position: relative;
+  justify-content: space-around;
+}
+
+.workout-bottom p {
+  border: white 2px solid;
+  padding: 5px 8px;
+  border-top: 0;
+  border-left: 50%;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: border 0.5s, background-color 0.75s;
+}
+
+.workout-bottom p:hover {
+  background-color: rgba(20, 165, 20, 0.9);
+  border: rgba(0, 255, 0, 0.5) 2px solid;
 }

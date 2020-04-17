@@ -23,14 +23,18 @@ const image4 = document.getElementById('images4');
 const image5 = document.getElementById('images5');
 const image6 = document.getElementById('images6');
 const routineMessage = document.getElementById('routine-message');
-let todaysDate = Date.today().toString();
+
 selectWorkout();
-console.log(todaysDate.substring(0, 3));
+
+//finds day and selects workout
 function selectWorkout() {
-  let todaysDate = Date.today();
-  switch (todaysDate.toString().substring(0, 3)) {
+  let todaysDate = Date.today(); //find day
+  switch (
+    todaysDate.toString().substring(0, 3) //depending on the day call a different workout method
+  ) {
     case 'Mon':
       if (todaysDate.getWeek() % 2 == 0) {
+        //since workout A and B alternate, we need to see what week it is to call the right one
         workoutB();
       } else {
         workoutA();
@@ -64,6 +68,8 @@ function selectWorkout() {
       break;
   }
 }
+
+//displays workoutA
 function workoutA() {
   routineMessage.innerHTML = `Heres your workout for today:`;
   workoutTitle1.innerHTML = `Pushups`;
@@ -97,6 +103,7 @@ function workoutA() {
   image6.src = './images/bicep.jpg';
 }
 
+//displays workoutB
 function workoutB() {
   routineMessage.innerHTML = `Heres your workout for today:`;
 
@@ -131,6 +138,7 @@ function workoutB() {
   image6.src = './images/decline.jpg';
 }
 
+//displays abs and cardio
 function restDay() {
   routineMessage.innerHTML = `Lets do some abs and cardio:`;
   workoutTitle1.innerHTML = `Plank`;
