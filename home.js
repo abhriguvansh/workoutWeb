@@ -129,7 +129,6 @@ function workoutA() {
   desc6.innerHTML = `Hold the barbell with both hands facing up so your arms are shoulder-width apart. Curl the barbell to the middle of your body. Slowly lower the weight to return to the starting position.`;
   image6.src = './images/bicep.jpg';
   createSets(workout6, 3, 8);
-
 }
 
 //displays workoutB
@@ -146,32 +145,31 @@ function workoutB() {
   reps2.innerHTML = `4 x 8`;
   desc2.innerHTML = `Find knee height bench. Get into a forward lunge position with torso up and your back foot on the bench. Lower until your front thigh is almost horizontal. Don't let your knee travel beyond your toes.`;
   image2.src = './images/splitsquat.jpg';
-  createSets(workout1, 4, 8);
+  createSets(workout2, 4, 8);
 
   workoutTitle3.innerHTML = `Bent Over Row`;
   reps3.innerHTML = `3 x (8-12)`;
   desc3.innerHTML = `Grab a barbell with hands slightly wider than shoulder-width apart. With your legs slightly bent, keep your back straight and lean forward. Row the weight upwards into the chest. Pause then lower.`;
   image3.src = './images/row.jpg';
-  createSets(workout1, 4, '8-12');
+  createSets(workout3, 4, '8-12');
 
   workoutTitle4.innerHTML = `Lateral Raise`;
   reps4.innerHTML = `3 x 12`;
   desc4.innerHTML = `Hold a dumbbell in each hand and stand with palms facing each other. Raise the weights up and out 90 degrees until your arms are parallel to the floor.`;
   image4.src = './images/lateral.jpg';
-  createSets(workout1, 3, 12);
+  createSets(workout4, 3, 12);
 
   workoutTitle5.innerHTML = `Tricep Kickback`;
   reps5.innerHTML = `3 x 12`;
   desc5.innerHTML = `Rest hands and knees on bench. Keep arm up and bent (see top part of image). Extend arm to fully straight position (bottom right part of image). Return to default position.`;
   image5.src = './images/tricep.jpg';
-  createSets(workout1, 3, 12);
+  createSets(workout5, 3, 12);
 
   workoutTitle6.innerHTML = `Decline Pushups`;
   reps6.innerHTML = `3 x 12`;
   desc6.innerHTML = `Rest hands on the floor but keep feet on a bench so that your lower body is elevated. Same form as pushups.`;
   image6.src = './images/decline.jpg';
-  createSets(workout1, 3, 12);
-
+  createSets(workout6, 3, 12);
 }
 
 //displays abs and cardio
