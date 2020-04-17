@@ -5,7 +5,7 @@
 }
 
 html {
-  height: 1000%;
+  height: 250%;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+100 */
   background: #ff351f; /* Old browsers */
   background: -moz-linear-gradient(
@@ -39,7 +39,7 @@ html {
 #routine-message {
   text-align: center;
   margin-top: 70px;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   color: white;
   transition: ease 2s;
   font-size: 36px;
@@ -52,18 +52,20 @@ html {
 }
 
 #workout-list .workout {
+  transition: ease-in-out 0.5s;
   width: 400px;
   height: 150px;
   margin: 50px auto;
   color: white;
   border: white 2px solid;
-  border-radius: 20px;
+  border-radius: 25px;
   position: relative;
 }
 #workout-list .workout img {
   width: 100px;
   height: 100px;
-  border: white 2px solid;
+  border: #ff351f 2px solid;
+
   border-radius: 20px;
   margin-top: auto;
   margin-bottom: auto;
@@ -91,4 +93,12 @@ html {
 }
 .workout-title {
   font-size: 24px;
+}
+
+.workout:hover {
+  background-color: white;
+}
+
+#text:hover {
+  color: #ff351f;
 }
