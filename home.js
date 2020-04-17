@@ -24,7 +24,7 @@ const image5 = document.getElementById('images5');
 const image6 = document.getElementById('images6');
 const routineMessage = document.getElementById('routine-message');
 let todaysDate = Date.today().toString();
-restDay();
+selectWorkout();
 console.log(todaysDate.substring(0, 3));
 function selectWorkout() {
   let todaysDate = Date.today();
