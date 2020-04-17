@@ -17,3 +17,5 @@ Saturday: Abs and Cardio
 Sunday: Abs and Cardio
 
 Workout A and B alternate so on Monday you will do Workout A and then next monday you will do Workout B
+
+The website displays each workout for you and will have a set of buttons under it to keep track of your progress. When you finish a set you can click one of the buttons and it will disappear, letting you know you completed the set.
