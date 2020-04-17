@@ -22,4 +22,46 @@ const image3 = document.getElementById('images3');
 const image4 = document.getElementById('images4');
 const image5 = document.getElementById('images5');
 const image6 = document.getElementById('images6');
-console.log(Date.today());
+let todaysDate = Date.today().toString();
+console.log(todaysDate.substring(0, 3));
+
+function isOddDay() {
+  let todaysDate = Date.today();
+  switch (todaysDate.toString().substring(0, 3)) {
+    case 'Mon':
+      if (todaysDate.getWeek() % 2 == 0) {
+        workoutB();
+      } else {
+        workoutA();
+      }
+      break;
+    case 'Tue':
+      restDay();
+      break;
+    case 'Wed':
+      if (todaysDate.getWeek() % 2 == 0) {
+        workoutA();
+      } else {
+        workoutB();
+      }
+      break;
+    case 'Thu':
+      restDay();
+      break;
+    case 'Fri':
+      if (todaysDate.getWeek() % 2 == 0) {
+        workoutA();
+      } else {
+        workoutB();
+      }
+      break;
+    case 'Sat':
+      restDay();
+      break;
+    case 'Sun':
+      restDay();
+      break;
+  }
+}
+
+
