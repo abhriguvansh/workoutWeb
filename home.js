@@ -22,7 +22,9 @@ const image3 = document.getElementById('images3');
 const image4 = document.getElementById('images4');
 const image5 = document.getElementById('images5');
 const image6 = document.getElementById('images6');
+const routineMessage = document.getElementById('routine-message');
 let todaysDate = Date.today().toString();
+restDay();
 console.log(todaysDate.substring(0, 3));
 function selectWorkout() {
   let todaysDate = Date.today();
@@ -63,6 +65,7 @@ function selectWorkout() {
   }
 }
 function workoutA() {
+  routineMessage.innerHTML = `Heres your workout for today:`;
   workoutTitle1.innerHTML = `Pushups`;
   reps1.innerHTML = `4 x 20`;
   desc1.innerHTML = `Lay with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again.`;
@@ -95,6 +98,8 @@ function workoutA() {
 }
 
 function workoutB() {
+  routineMessage.innerHTML = `Heres your workout for today:`;
+
   workoutTitle1.innerHTML = `Incline Pushups`;
   reps1.innerHTML = `4 x 20`;
   desc1.innerHTML = `Place your hands on the edge of a bench. Bend your elbows to lower your chest to the edge of the bench. Push your body away from the bench until your elbows are extended.`;
@@ -126,6 +131,36 @@ function workoutB() {
   image6.src = './images/decline.jpg';
 }
 
-function restDay(){
-    
+function restDay() {
+  routineMessage.innerHTML = `Lets do some abs and cardio:`;
+  workoutTitle1.innerHTML = `Plank`;
+  reps1.innerHTML = `1 minute`;
+  desc1.innerHTML = `Supporting yourself on your forearms and the balls of your feet, bridge up and position your body in one straight line. Pull your abs in tight and hold for 30-60 seconds.`;
+  image1.src = './images/plank.jpg';
+
+  workoutTitle2.innerHTML = `Bicycle Crunch`;
+  reps2.innerHTML = `20-30 reps`;
+  desc2.innerHTML = `Lying on your back, bring your knees up to form a 90 degree angle. Crunch and twist body while you bring your leg close. If you crunch to the right you should bring right knee close.`;
+  image2.src = './images/bicycle.jpg';
+
+  workoutTitle3.innerHTML = `Side Plank`;
+  reps3.innerHTML = `1 minute per side`;
+  desc3.innerHTML = `Lie on your side with your forearm perpendicular to your body and one foot stacked over the other. Bridge your hip up and hold for 30-60 seconds while maintaining a straight line with your body.`;
+  image3.src = './images/side.jpg';
+
+  workoutTitle4.innerHTML = `Vertical Leg Crunch`;
+  reps4.innerHTML = `12-16 reps`;
+  desc4.innerHTML = `
+  Lie on your back with your legs up in the air, knees slightly bent. Try to touch your ankles with your hands by contracting just your abs, but keep your chin off your chest.`;
+  image4.src = './images/vert.jpg';
+
+  workoutTitle5.innerHTML = `Reverse Crunch`;
+  reps5.innerHTML = `15-20 reps`;
+  desc5.innerHTML = `Lie on your back with your hands tucked under and your knees bent. Bring your legs up until they form a 90 degree angle from your torso. Tilt and pull your knees in, squeeze and slowly lower.`;
+  image5.src = './images/reverse.png';
+
+  workoutTitle6.innerHTML = `Go On A Run!`;
+  reps6.innerHTML = `Any Duration`;
+  desc6.innerHTML = `Cardio is a great way to stay healthy! You can go for a long walk, jog a mile or even ride your bike!`;
+  image6.src = './images/cardio.jpg';
 }
