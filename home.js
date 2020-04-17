@@ -24,7 +24,6 @@ const image5 = document.getElementById('images5');
 const image6 = document.getElementById('images6');
 let todaysDate = Date.today().toString();
 console.log(todaysDate.substring(0, 3));
-workoutB();
 function selectWorkout() {
   let todaysDate = Date.today();
   switch (todaysDate.toString().substring(0, 3)) {
@@ -63,6 +62,37 @@ function selectWorkout() {
       break;
   }
 }
+function workoutA() {
+  workoutTitle1.innerHTML = `Pushups`;
+  reps1.innerHTML = `4 x 20`;
+  desc1.innerHTML = `Lay with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again.`;
+  image1.src = './images/pushup.jpg';
+
+  workoutTitle2.innerHTML = `Squats`;
+  reps2.innerHTML = `4 x 20`;
+  desc2.innerHTML = `Stand tall with your feet hip distance apart. Bend your knees and extend your buttocks backward. Rise back up and repeat. `;
+  image2.src = './images/squat.jpg';
+
+  workoutTitle3.innerHTML = `Lat Pulldown`;
+  reps3.innerHTML = `3 x (8-12)`;
+  desc3.innerHTML = `Pull the bar down until it's approximately level with the chin. Squeeze the shoulder blades together while maintaining square shoulders. Slowly return the bar to the top. `;
+  image3.src = './images/lat.jpg';
+
+  workoutTitle4.innerHTML = `Lying Leg Curl`;
+  reps4.innerHTML = `4 x 12`;
+  desc4.innerHTML = `Place a dumbbell on its end. Lie prone on your front, with your knees close to the edge. Pinch the dumbbell between the arches of your feet.`;
+  image4.src = './images/leg-curl.jpg';
+
+  workoutTitle5.innerHTML = `Shoulder Press`;
+  reps5.innerHTML = `3 x (8-12)`;
+  desc5.innerHTML = `Hold the dumbbells by your shoulders. Without leaning back, extend through your elbows to press the weights above your head. Then slowly return to the starting position. `;
+  image5.src = './images/shoulder.jpg';
+
+  workoutTitle6.innerHTML = `Bicep Curl`;
+  reps6.innerHTML = `3 x 8`;
+  desc6.innerHTML = `Hold the barbell with both hands facing up so your arms are shoulder-width apart. Curl the barbell to the middle of your body. Slowly lower the weight to return to the starting position.`;
+  image6.src = './images/bicep.jpg';
+}
 
 function workoutB() {
   workoutTitle1.innerHTML = `Incline Pushups`;
@@ -94,4 +124,8 @@ function workoutB() {
   reps6.innerHTML = `3 x 12`;
   desc6.innerHTML = `Rest hands on the floor but keep feet on a bench so that your lower body is elevated. Same form as pushups.`;
   image6.src = './images/decline.jpg';
+}
+
+function restDay(){
+    
 }
