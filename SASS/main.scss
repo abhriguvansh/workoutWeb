@@ -48,3 +48,9 @@ html {
 
   background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 700px) {
+  #routine-message {
+    font-size: 24px;
+  }
+}
