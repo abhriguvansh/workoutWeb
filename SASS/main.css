@@ -60,14 +60,6 @@
       justify-content: space-around;
 }
 
-.reps-button {
-  border: none;
-  background: none;
-  color: white;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-}
-
 .workout-bottom p {
   border: white 2px solid;
   padding: 5px 8px;
@@ -79,7 +71,7 @@
   transition: border 0.5s, background-color 0.75s;
 }
 
-.workout-bottom p:hover {
+.workout-bottom p :hover {
   background-color: rgba(20, 165, 20, 0.9);
   border: rgba(0, 255, 0, 0.5) 2px solid;
   border-top: white 2px solid;
@@ -88,7 +80,6 @@
 #workout-list {
   position: absolute;
   right: 35.8%;
-  right: -750px;
   -webkit-transition: right 2s ease;
   transition: right 2s ease;
   list-style-type: none;
@@ -114,11 +105,23 @@
   height: 100px;
   border: #ff351f 2px solid;
   border-radius: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
   position: absolute;
   top: 24px;
   right: 24px;
+}
+
+#workout-list #text {
+  text-align: center;
+  width: 404px;
+  height: 100%;
+  border-radius: 22px;
+  -webkit-transition: color 0.2s, background-color 1.5s;
+  transition: color 0.2s, background-color 1.5s;
+}
+
+#workout-list #text :hover {
+  background-color: white;
+  color: #ff351f;
 }
 
 #workout-list #text .workout-title {
@@ -126,35 +129,6 @@
   padding-top: 10px;
   margin-bottom: 5px;
   width: 270px;
-}
-
-.reps {
-  width: 270px;
-  margin-bottom: 8px;
-}
-
-.description {
-  width: 230px;
-  font-size: 12px;
-  margin-left: 13px;
-}
-
-.workout-title {
-  font-size: 24px;
-}
-
-#text:hover {
-  background-color: white;
-  color: #ff351f;
-}
-
-#text {
-  text-align: center;
-  width: 404px;
-  height: 100%;
-  border-radius: 22px;
-  -webkit-transition: color 0.2s, background-color 1.5s;
-  transition: color 0.2s, background-color 1.5s;
 }
 
 * {

@@ -75,7 +75,6 @@ html {
 #workout-list {
   position: absolute;
   right: 35.8%;
-  right: -750px;
   transition: right 2s ease;
   list-style-type: none;
   margin-top: 50px;
@@ -99,8 +98,7 @@ html {
   border: #ff351f 2px solid;
 
   border-radius: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
+
   position: absolute;
   top: 24px;
   right: 24px;
