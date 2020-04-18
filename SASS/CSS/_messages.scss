@@ -1,0 +1,49 @@
+
+#greeting {
+  position: absolute;
+  top: -200px;
+  color: white;
+  transition: top 3s ease;
+  font-size: 48px;
+  /* left: 41.8%;  */
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#routine-message {
+  position: absolute;
+  top: 120px;
+  /* left: 33.5%; */
+  left: -1000px;
+
+  margin-top: 100px;
+  margin-bottom: 200px;
+  color: white;
+  transition: left 2.5s ease;
+  font-size: 36px;
+}
+
+#default {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 30px;
+  top: 84%;
+  left: -500px;
+  transition: left 2s ease;
+}
+
+#congrats {
+  position: absolute;
+  color: white;
+  top: 84%;
+  font-size: 36px;
+  margin-top: 30px;
+  left: 200%;
+  transition: left 2s ease;
+}

@@ -1,0 +1,191 @@
+#greeting {
+  position: absolute;
+  top: -200px;
+  color: white;
+  -webkit-transition: top 3s ease;
+  transition: top 3s ease;
+  font-size: 48px;
+  /* left: 41.8%;  */
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#routine-message {
+  position: absolute;
+  top: 120px;
+  /* left: 33.5%; */
+  left: -1000px;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  color: white;
+  -webkit-transition: left 2.5s ease;
+  transition: left 2.5s ease;
+  font-size: 36px;
+}
+
+#default {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 30px;
+  top: 84%;
+  left: -500px;
+  -webkit-transition: left 2s ease;
+  transition: left 2s ease;
+}
+
+#congrats {
+  position: absolute;
+  color: white;
+  top: 84%;
+  font-size: 36px;
+  margin-top: 30px;
+  left: 200%;
+  -webkit-transition: left 2s ease;
+  transition: left 2s ease;
+}
+
+.workout-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+  position: relative;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.reps-button {
+  border: none;
+  background: none;
+  color: white;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.workout-bottom p {
+  border: white 2px solid;
+  padding: 5px 8px;
+  border-top: 0;
+  border-left: 50%;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  -webkit-transition: border 0.5s, background-color 0.75s;
+  transition: border 0.5s, background-color 0.75s;
+}
+
+.workout-bottom p:hover {
+  background-color: rgba(20, 165, 20, 0.9);
+  border: rgba(0, 255, 0, 0.5) 2px solid;
+  border-top: white 2px solid;
+}
+
+#workout-list {
+  position: absolute;
+  right: 35.8%;
+  right: -750px;
+  -webkit-transition: right 2s ease;
+  transition: right 2s ease;
+  list-style-type: none;
+  margin-top: 50px;
+}
+
+#workout-list .workout {
+  -webkit-transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+  width: 400px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  border: white 2px solid;
+  border-radius: 25px;
+  position: relative;
+  margin-bottom: 75px;
+}
+
+#workout-list .workout img {
+  width: 100px;
+  height: 100px;
+  border: #ff351f 2px solid;
+  border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+#workout-list #text .workout-title {
+  font-size: 24px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  width: 270px;
+}
+
+.reps {
+  width: 270px;
+  margin-bottom: 8px;
+}
+
+.description {
+  width: 230px;
+  font-size: 12px;
+  margin-left: 13px;
+}
+
+.workout-title {
+  font-size: 24px;
+}
+
+#text:hover {
+  background-color: white;
+  color: #ff351f;
+}
+
+#text {
+  text-align: center;
+  width: 404px;
+  height: 100%;
+  border-radius: 22px;
+  -webkit-transition: color 0.2s, background-color 1.5s;
+  transition: color 0.2s, background-color 1.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 2000px;
+  margin: 0;
+  max-height: 2000px;
+  overflow-x: hidden;
+}
+
+html {
+  max-height: 2000px;
+  margin: 0;
+  height: 2000px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+49,e3861b+49,ff351f+100 */
+  background: #ff351f;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff351f), color-stop(49%, #e3861b), color-stop(49%, #e3861b), to(#ff351f));
+  background: linear-gradient(to bottom, #ff351f 0%, #e3861b 49%, #e3861b 49%, #ff351f 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#ff351f',GradientType=0 );
+  /* IE6-9 */
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=main.css.map */

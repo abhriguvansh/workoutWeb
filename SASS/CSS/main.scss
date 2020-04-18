@@ -1,0 +1,50 @@
+@import './messages';
+@import './buttons';
+@import './workout';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 2000px;
+  margin: 0;
+  max-height: 2000px;
+  overflow-x: hidden;
+}
+
+html {
+  max-height: 2000px;
+  margin: 0;
+  height: 2000px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+49,e3861b+49,ff351f+100 */
+  background: #ff351f; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #ff351f 0%,
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #ff351f 0%,
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ff351f 0%,
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#ff351f',GradientType=0 ); /* IE6-9 */
+
+  background-repeat: no-repeat;
+}
