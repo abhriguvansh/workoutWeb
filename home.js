@@ -1,34 +1,3 @@
-// const workoutTitle1 = document.getElementById('workout-title1');
-// const workoutTitle2 = document.getElementById('workout-title2');
-// const workoutTitle3 = document.getElementById('workout-title3');
-// const workoutTitle4 = document.getElementById('workout-title4');
-// const workoutTitle5 = document.getElementById('workout-title5');
-// const workoutTitle6 = document.getElementById('workout-title6');
-// const reps1 = document.getElementById('reps1');
-// const reps2 = document.getElementById('reps2');
-// const reps3 = document.getElementById('reps3');
-// const reps4 = document.getElementById('reps4');
-// const reps5 = document.getElementById('reps5');
-// const reps6 = document.getElementById('reps6');
-// const desc1 = document.getElementById('description1');
-// const desc2 = document.getElementById('description2');
-// const desc3 = document.getElementById('description3');
-// const desc4 = document.getElementById('description4');
-// const desc5 = document.getElementById('description5');
-// const desc6 = document.getElementById('description6');
-// const image1 = document.getElementById('images1');
-// const image2 = document.getElementById('images2');
-// const image3 = document.getElementById('images3');
-// const image4 = document.getElementById('images4');
-// const image5 = document.getElementById('images5');
-// const image6 = document.getElementById('images6');
-// const routineMessage = document.getElementById('routine-message');
-// const workout1 = document.getElementById('workout1');
-// const workout2 = document.getElementById('workout2');
-// const workout3 = document.getElementById('workout3');
-// const workout4 = document.getElementById('workout4');
-// const workout5 = document.getElementById('workout5');
-// const workout6 = document.getElementById('workout6');
 let defaultMessage = document.createElement('div');
 let congratsMessage = document.createElement('div');
 let workoutList = document.createElement('ul');
@@ -57,6 +26,8 @@ function startup() {
       }, 1000);
     }, 1000);
   }, 3000);
+  body.style.minHeight = '2000px';
+  body.style.minWidth = '100%';
 }
 //creates a workout
 function createWorkout(title, amt, desc, img, sets, numReps) {
@@ -150,7 +121,6 @@ function selectWorkout() {
   num = how many buttons you want
   workoutNum = which workout number are you adding the buttons too
   reps = how many reps you want the button to display*/
-
 function createSets(workoutNum, num, reps) {
   let workoutBottom = document.createElement('div');
   workoutBottom.className = 'workout-bottom';
@@ -161,7 +131,7 @@ function createSets(workoutNum, num, reps) {
     button.className = 'reps-button';
     button.addEventListener('click', function () {
       completeSet(button);
-      if (workoutsCompleted == 3) {
+      if (workoutsCompleted == 21) {
         let message = document.getElementById('message');
         defaultMessage.style.left = '-500px';
         congratsMessage.style.left = '24%';
@@ -203,7 +173,6 @@ function workoutA() {
     4,
     20
   );
-  // routineMessage.innerHTML = `Heres your workout for today:`;
   createWorkout(
     'Lat Pulldown',
     '3 x (8-12)',
