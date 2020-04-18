@@ -17,24 +17,30 @@ html {
   max-height: 2000px;
   margin: 0;
   height: 2000px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+100 */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+49,e3861b+49,ff351f+100 */
   background: #ff351f; /* Old browsers */
   background: -moz-linear-gradient(
     top,
     #ff351f 0%,
-    #e3861b 100%
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
   ); /* FF3.6-15 */
   background: -webkit-linear-gradient(
     top,
     #ff351f 0%,
-    #e3861b 100%
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
   ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to bottom,
     #ff351f 0%,
-    #e3861b 100%
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#e3861b',GradientType=0 ); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#ff351f',GradientType=0 ); /* IE6-9 */
 
   background-repeat: no-repeat;
 }
@@ -63,12 +69,30 @@ html {
 
 #workout-list {
   position: absolute;
-  right: 35.8%;
+  //right: 35.8%;
   right: -750px;
   transition: right 2s ease;
   list-style-type: none;
 }
 
+#workout-list:nth-child(1) {
+  transition-delay: 0.25s;
+}
+#workout-list:nth-child(2) {
+  transition-delay: 0.5s;
+}
+#workout-list:nth-child(3) {
+  transition-delay: 0.75s;
+}
+#workout-list:nth-child(4) {
+  transition-delay: 0.1s;
+}
+#workout-list:nth-child(5) {
+  transition-delay: 1.25s;
+}
+#workout-list:nth-child(6) {
+  transition-delay: 1.5s;
+}
 #workout-list .workout {
   transition: ease-in-out 0.5s;
   width: 400px;
@@ -80,6 +104,13 @@ html {
   border-radius: 25px;
   position: relative;
   margin-bottom: 75px;
+
+  @for $i from 0 through 6 {
+    &:nth-child(#{$i}n) {
+      $delay: $i / 10;
+      transition-delay: #{$delay}s;
+    }
+  }
 }
 #workout-list .workout img {
   width: 100px;
