@@ -1,3 +1,4 @@
+//cached elements
 let defaultMessage = document.createElement('div');
 let congratsMessage = document.createElement('div');
 let workoutList = document.createElement('ul');
@@ -5,10 +6,11 @@ workoutList.id = 'workout-list';
 const body = document.getElementById('body');
 const greeting = document.getElementById('greeting');
 const routineMessage = document.getElementById('routine-message');
-let workoutsCompleted = 0;
+let workoutsCompleted = 0; //keeps track of workout progress
 
 startup();
-//starts animations, first method called
+
+//starts animations, creates workout and displays it for the use
 function startup() {
   greeting.style.top = '20%';
   setTimeout(function () {
@@ -21,7 +23,7 @@ function startup() {
         workoutList.style.top = '15%';
         setTimeout(function () {
           workoutList.style.right = '35.8%';
-          
+
           defaultMessage.style.left = '39.5%';
         }, 1000);
       }, 1000);
@@ -30,7 +32,34 @@ function startup() {
   body.style.minHeight = '2000px';
   body.style.minWidth = '100%';
 }
-//creates a workout
+
+//creates rest day, rest day does not have buttons so we cant use createWorkout()
+function createRestDay(title, amt, desc, img) {
+  let workout = document.createElement('li');
+  workout.className = 'workout';
+  let text = document.createElement('div');
+  text.id = 'text';
+  workoutTitle = document.createElement('h3');
+  workoutTitle.className = 'workout-title';
+  workoutTitle.innerHTML = title;
+  text.appendChild(workoutTitle);
+  let reps = document.createElement('p');
+  reps.className = 'reps';
+  reps.innerHTML = amt;
+  text.appendChild(reps);
+  let description = document.createElement('p');
+  description.className = 'description';
+  description.innerHTML = desc;
+  text.appendChild(description);
+  workout.appendChild(text);
+  let image = document.createElement('img');
+  image.className = 'images';
+  image.src = img;
+  workout.appendChild(image);
+  workoutList.appendChild(workout);
+}
+
+//creates a workout given name, reps and sets, description and an image. Also creates buttons for the workout
 function createWorkout(title, amt, desc, img, sets, numReps) {
   let workout = document.createElement('li');
   workout.className = 'workout';
@@ -133,6 +162,7 @@ function createSets(workoutNum, num, reps) {
     button.addEventListener('click', function () {
       completeSet(button);
       if (workoutsCompleted == 21) {
+        //if all buttons have been clicked show congrats message
         let message = document.getElementById('message');
         defaultMessage.style.left = '-500px';
         congratsMessage.style.left = '24%';
@@ -271,35 +301,45 @@ function workoutB() {
 
 //displays abs and cardio
 function restDay() {
-  routineMessage.innerHTML = `Lets do some abs and cardio:`;
-  workoutTitle1.innerHTML = `Plank`;
-  reps1.innerHTML = `1 minute`;
-  desc1.innerHTML = `Supporting yourself on your forearms and the balls of your feet, bridge up and position your body in one straight line. Pull your abs in tight and hold for 30-60 seconds.`;
-  image1.src = './images/plank.jpg';
+  body.appendChild(workoutList);
 
-  workoutTitle2.innerHTML = `Bicycle Crunch`;
-  reps2.innerHTML = `20-30 reps`;
-  desc2.innerHTML = `Lying on your back, bring your knees up to form a 90 degree angle. Crunch and twist body while you bring your leg close. If you crunch to the right you should bring right knee close.`;
-  image2.src = './images/bicycle.jpg';
+  createRestDay(
+    `Plank`,
+    `1 minute`,
+    `Supporting yourself on your forearms and the balls of your feet, bridge up and position your body in one straight line. Pull your abs in tight and hold for 30-60 seconds.`,
+    './images/plank.jpg'
+  );
 
-  workoutTitle3.innerHTML = `Side Plank`;
-  reps3.innerHTML = `1 minute per side`;
-  desc3.innerHTML = `Lie on your side with your forearm perpendicular to your body and one foot stacked over the other. Bridge your hip up and hold for 30-60 seconds while maintaining a straight line with your body.`;
-  image3.src = './images/side.jpg';
+  createRestDay(
+    `Bicycle Crunch`,
+    `20-30 reps`,
+    `Lying on your back, bring your knees up to form a 90 degree angle. Crunch and twist body while you bring your leg close. If you crunch to the right you should bring right knee close.`,
+    './images/bicycle.jpg'
+  );
 
-  workoutTitle4.innerHTML = `Vertical Leg Crunch`;
-  reps4.innerHTML = `12-16 reps`;
-  desc4.innerHTML = `
-  Lie on your back with your legs up in the air, knees slightly bent. Try to touch your ankles with your hands by contracting just your abs, but keep your chin off your chest.`;
-  image4.src = './images/vert.jpg';
+  createRestDay(
+    `Side Plank`,
+    `1 minute per side`,
+    `Lie on your side with your forearm perpendicular to your body and one foot stacked over the other. Bridge your hip up and hold for 30-60 seconds while maintaining a straight line with your body.`,
+    `./images/side.jpg`
+  );
+  createRestDay(
+    `Vertical Leg Crunch`,
+    `12-16 reps`,
+    `Lie on your back with your legs up in the air, knees slightly bent. Try to touch your ankles with your hands by contracting just your abs, but keep your chin off your chest`,
+    './images/vert.jpg'
+  );
 
-  workoutTitle5.innerHTML = `Reverse Crunch`;
-  reps5.innerHTML = `15-20 reps`;
-  desc5.innerHTML = `Lie on your back with your hands tucked under and your knees bent. Bring your legs up until they form a 90 degree angle from your torso. Tilt and pull your knees in, squeeze and slowly lower.`;
-  image5.src = './images/reverse.png';
-
-  workoutTitle6.innerHTML = `Go On A Run!`;
-  reps6.innerHTML = `Any Duration`;
-  desc6.innerHTML = `Cardio is a great way to stay healthy! You can go for a long walk, jog a mile or even ride your bike!`;
-  image6.src = './images/cardio.jpg';
+  createRestDay(
+    `Reverse Crunch`,
+    `15-20 reps`,
+    `Lie on your back with your hands tucked under and your knees bent. Bring your legs up until they form a 90 degree angle from your torso. Tilt and pull your knees in, squeeze and slowly lower.`,
+    './images/reverse.png'
+  );
+  createRestDay(
+    `Go On A Run!`,
+    `Any Duration`,
+    `Cardio is a great way to stay healthy! You can go for a long walk, jog a mile or even ride your bike!`,
+    './images/cardio.jpg'
+  );
 }
