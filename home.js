@@ -16,15 +16,18 @@ function startup() {
   setTimeout(function () {
     greeting.style.top = '100px';
     setTimeout(function () {
-      routineMessage.style.left = '33.5%';
+      routineMessage.style.left = '50%';
+      routineMessage.style.transform = 'translateX(-50%)';
       setTimeout(function () {
         workoutList.style.right = '-700px';
         selectWorkout();
         workoutList.style.top = '15%';
         setTimeout(function () {
-          workoutList.style.right = '35.8%';
+          workoutList.style.right = '50%';
+          workoutList.style.transform = 'translateX(50%)';
 
-          defaultMessage.style.left = '39.5%';
+          defaultMessage.style.left = '50%';
+          defaultMessage.style.transform = 'translateX(-50%)';
         }, 1000);
       }, 1000);
     }, 1000);
@@ -165,7 +168,8 @@ function createSets(workoutNum, num, reps) {
         //if all buttons have been clicked show congrats message
         let message = document.getElementById('message');
         defaultMessage.style.left = '-500px';
-        congratsMessage.style.left = '24%';
+        congratsMessage.style.left = '50%';
+        congratsMessage.style.transform = 'translateX(-50%)';
       }
     });
     tag.appendChild(text);
