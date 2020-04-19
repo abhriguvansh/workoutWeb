@@ -7,7 +7,7 @@
   font-size: 48px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -55,7 +55,7 @@
   height: 30px;
   position: relative;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .workout-bottom p {
@@ -96,6 +96,13 @@
   border-radius: 25px;
   position: relative;
   margin-bottom: 75px;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+#workout-list .workout:hover {
+  -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 }
 
 #workout-list .workout img {
@@ -164,8 +171,22 @@ html {
   /* Old browsers */
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff351f), color-stop(49%, #e3861b), color-stop(49%, #e3861b), to(#ff351f));
-  background: linear-gradient(to bottom, #ff351f 0%, #e3861b 49%, #e3861b 49%, #ff351f 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff351f),
+    color-stop(49%, #e3861b),
+    color-stop(49%, #e3861b),
+    to(#ff351f)
+  );
+  background: linear-gradient(
+    to bottom,
+    #ff351f 0%,
+    #e3861b 49%,
+    #e3861b 49%,
+    #ff351f 100%
+  );
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#ff351f',GradientType=0 );
   /* IE6-9 */
