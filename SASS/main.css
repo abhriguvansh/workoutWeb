@@ -7,7 +7,7 @@
   font-size: 48px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -55,7 +55,7 @@
   height: 30px;
   position: relative;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
 }
 
 .workout-bottom p {
@@ -97,22 +97,28 @@
   position: relative;
   margin-bottom: 75px;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 #workout-list .workout:hover {
   -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+#workout-list .workout:hover.workout img {
+  border: #2f283d 2px solid;
 }
 
 #workout-list .workout img {
   width: 100px;
   height: 100px;
-  border: #ff351f 2px solid;
+  border: white 2px solid;
   border-radius: 20px;
   position: absolute;
   top: 24px;
   right: 24px;
+  -webkit-transition: border-color 1s ease;
+  transition: border-color 1s ease;
 }
 
 #workout-list .workout-title {
@@ -127,13 +133,13 @@
   width: 404px;
   height: 100%;
   border-radius: 22px;
-  -webkit-transition: color 0.2s, background-color 1.5s;
-  transition: color 0.2s, background-color 1.5s;
+  -webkit-transition: color 1s, background-color 1s;
+  transition: color 1s, background-color 1s;
 }
 
 #workout-list #text:hover {
   background-color: white;
-  color: #ff351f;
+  color: #2f283d;
 }
 
 #workout-list #text .reps {
@@ -143,14 +149,14 @@
 
 #workout-list #text .description {
   width: 230px;
-  font-size: 12px;
+  font-size: 10px;
   margin-left: 13px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -166,34 +172,12 @@ html {
   max-height: 2000px;
   margin: 0;
   height: 2000px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+49,e3861b+49,ff351f+100 */
-  background: #ff351f;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#ff351f),
-    color-stop(49%, #e3861b),
-    color-stop(49%, #e3861b),
-    to(#ff351f)
-  );
-  background: linear-gradient(
-    to bottom,
-    #ff351f 0%,
-    #e3861b 49%,
-    #e3861b 49%,
-    #ff351f 100%
-  );
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#ff351f',GradientType=0 );
-  /* IE6-9 */
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#a18cd1), to(#fbc2eb));
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) {
   #routine-message {
     font-size: 24px;
   }

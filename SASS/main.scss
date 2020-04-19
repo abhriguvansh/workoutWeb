@@ -5,7 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -21,35 +21,11 @@ html {
   max-height: 2000px;
   margin: 0;
   height: 2000px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff351f+0,e3861b+49,e3861b+49,ff351f+100 */
-  background: #ff351f; /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    #ff351f 0%,
-    #e3861b 49%,
-    #e3861b 49%,
-    #ff351f 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    #ff351f 0%,
-    #e3861b 49%,
-    #e3861b 49%,
-    #ff351f 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #ff351f 0%,
-    #e3861b 49%,
-    #e3861b 49%,
-    #ff351f 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff351f', endColorstr='#ff351f',GradientType=0 ); /* IE6-9 */
-
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) {
   #routine-message {
     font-size: 24px;
   }

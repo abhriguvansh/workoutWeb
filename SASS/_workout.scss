@@ -1,5 +1,5 @@
 $primaryColor: white;
-$secondaryColor: #ff351f;
+$secondaryColor: #2f283d;
 
 #workout-list {
   position: absolute;
@@ -21,16 +21,20 @@ $secondaryColor: #ff351f;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     &:hover {
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+      &.workout img {
+        border: $secondaryColor 2px solid;
+      }
     }
   }
   .workout img {
     width: 100px;
     height: 100px;
-    border: $secondaryColor 2px solid;
+    border: $primaryColor 2px solid;
     border-radius: 20px;
     position: absolute;
     top: 24px;
     right: 24px;
+    transition: border-color 1s ease;
   }
   .workout-title {
     font-size: 24px;
@@ -43,7 +47,7 @@ $secondaryColor: #ff351f;
     width: 404px;
     height: 100%;
     border-radius: 22px;
-    transition: color 0.2s, background-color 1.5s;
+    transition: color 1s, background-color 1s;
     &:hover {
       background-color: $primaryColor;
       color: $secondaryColor;
@@ -54,7 +58,7 @@ $secondaryColor: #ff351f;
     }
     .description {
       width: 230px;
-      font-size: 12px;
+      font-size: 10px;
       margin-left: 13px;
     }
   }
