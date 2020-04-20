@@ -56,10 +56,12 @@
   position: relative;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  color: none;
 }
 
 .workout-bottom p {
   border: white 2px solid;
+  color: white;
   padding: 5px 8px;
   border-top: 0;
   border-left: 50%;
@@ -69,10 +71,19 @@
   transition: border 0.5s, background-color 0.75s;
 }
 
-.workout-bottom p :hover {
+.workout-bottom p:hover {
   background-color: rgba(20, 165, 20, 0.9);
   border: rgba(0, 255, 0, 0.5) 2px solid;
   border-top: white 2px solid;
+}
+
+.workout-bottom button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 
 #workout-list {
