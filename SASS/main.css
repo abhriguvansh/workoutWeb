@@ -57,6 +57,8 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   color: none;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 .workout-bottom p {
@@ -72,18 +74,24 @@
 }
 
 .workout-bottom p:hover {
-  background-color: rgba(20, 165, 20, 0.9);
+  background-color: rgba(20, 165, 20, 0.5);
   border: rgba(0, 255, 0, 0.5) 2px solid;
   border-top: white 2px solid;
 }
 
 .workout-bottom button {
-  background-color: Transparent;
+  background-color: transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   overflow: hidden;
   outline: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.vanish {
+  opacity: 0;
 }
 
 #workout-list {
@@ -133,7 +141,7 @@
 }
 
 #workout-list .workout-title {
-  font-size: 24px;
+  font-size: 20px;
   padding-top: 10px;
   margin-bottom: 5px;
   width: 270px;

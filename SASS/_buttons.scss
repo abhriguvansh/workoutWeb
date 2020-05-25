@@ -1,4 +1,4 @@
-$fillColor: rgba(20, 165, 20, 0.9);
+$fillColor: rgba(20, 165, 20, 0.5);
 $borderColor: rgba(0, 255, 0, 0.5);
 
 .workout-bottom {
@@ -7,6 +7,7 @@ $borderColor: rgba(0, 255, 0, 0.5);
   position: relative;
   justify-content: space-around;
   color: none;
+  transition: all 0.8s ease;
   p {
     border: white 2px solid;
     color: white;
@@ -23,11 +24,16 @@ $borderColor: rgba(0, 255, 0, 0.5);
     }
   }
   button {
-    background-color: Transparent;
+    background-color: transparent;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
+    transition: all 1s ease;
   }
+}
+
+.vanish {
+  opacity: 0;
 }

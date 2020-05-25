@@ -181,12 +181,12 @@ function createSets(workoutNum, num, reps) {
 
 //move set off the screen, signifying its complete
 function completeSet(button) {
-  button.style.opacity = 0;
   workoutsCompleted++;
   console.log(workoutsCompleted);
+  button.classList.add('vanish');
   setTimeout(function () {
-    button.style.display = 'none';
-  }, 375);
+    button.remove();
+  }, 325);
 }
 
 //displays workoutA
